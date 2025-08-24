@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class currencyconverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Exchange rates (example rates, update as needed)
+        double usdToInr = 83.0;
+        double eurToInr = 90.0;
+        double gbpToInr = 105.0;
+
+        System.out.println("Welcome to the Currency Converter!");
+        System.out.println("Choose the currency to convert from:");
+        System.out.println("1. USD to INR");
+        System.out.println("2. EUR to INR");
+        System.out.println("3. GBP to INR");
+
+        int choice = scanner.nextInt();
+        System.out.print("Enter the amount to convert: ");
+        double amount = scanner.nextDouble();
+
+        double convertedAmount = 0.0;
+
+        switch (choice) {
+            case 1:
+                convertedAmount = amount * usdToInr;
+                System.out.printf("Converted Amount: %.2f INR%n", convertedAmount);
+                break;
+            case 2:
+                convertedAmount = amount * eurToInr;
+                System.out.printf("Converted Amount: %.2f INR%n", convertedAmount);
+                break;
+            case 3:
+                convertedAmount = amount * gbpToInr;
+                System.out.printf("Converted Amount: %.2f INR%n", convertedAmount);
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+        }
+
+        scanner.close();
+    }
+}
